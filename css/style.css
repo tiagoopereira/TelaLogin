@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
+* {
+    font-family: 'Open Sans', 'Sans-serif';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ECF0F1;
+}
+    .content {
+        position: relative; 
+        background-color: #FFF;
+        border-radius: 15px;
+        width: 960px;
+        height: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .content::before {
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 100%;
+        background-color: #58AF9B;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+
+        left: 0;
+    }
+
+    /* TÍTULO */
+    .title {
+        font-size: 28px;
+        text-transform: capitalize;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+        .title-primary {
+            color: #FFF;
+        }
+        .title-secondary {
+            color: #58AF9B;
+        }
+    
+    /* DESCRIÇÃO */
+    .description {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 25px;
+    }
+        .description-primary{
+            color: #FFF;
+        }
+        .description-secondary {
+            color: #7F8C8D;
+        }
+
+    /* BOTÕES */
+    .btn {
+        border-radius: 15px;
+        text-transform: uppercase;
+        color: #FFF;
+        cursor: pointer;
+        font-weight: 700;
+        margin-top: 15px;
+        width: 150px;
+        align-self: center;
+        border: none;
+        transition: background-color .8s;
+        outline: none;
+    }
+        .btn-primary {
+            background-color: transparent;
+            font-size: 10px;
+            padding: 8px 50px;
+            border: 1px solid #FFF;
+        }
+        .btn-primary:hover {
+            background-color: #FFF;
+            color: #58AF9B;
+        }
+        .btn-secondary {
+            background-color: #58AF9B;
+            font-size: 10px;
+            padding: 8px 50px;
+            border: 1px solid #FFF;
+        }
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: #58AF9B;
+            border: 1px solid #58AF9B;
+        }
+
+    /* PRIMEIRA TELA */
+    .first-content {
+        display: flex;  
+    }
+        .first-content .second-column {
+            z-index: 12;
+        }
+        /* PRIMEIRA COLUNA DA TELA */
+        .first-column {
+            z-index: 10;
+            text-align: center;
+            width: 40%;
+        }    
+        /* SEGUNDA COLUNA DA TELA */
+        .second-column {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+            /* LISTA DE MÍDIAS SOCIAS */
+            .list-social-media {
+                display: flex;
+                list-style: none;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+                .link-social-media {
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+                .link-social-media:hover .item-social-media {
+                    background-color: #58AF9B;
+                    color: #FFF;
+                    border: 1px solid #58AF9B;
+                }
+                .item-social-media {
+                    border: 1px solid #95A5A6;
+                    border-radius: 50%;
+                    width: 35px;
+                    height: 35px;
+                    text-align: center;
+                    line-height: 35px;
+                    color: #95A5A6;
+                    transition: background-color .8s;
+                }
+            /* FORMULÁRIO */
+            .form {
+                display: flex;
+                flex-direction: column;
+                width: 55%;
+                margin-top: 10px;
+            }
+                .label-input {
+                    display: flex;
+                    align-items: center;
+                    background-color: #ECF0F1;
+                    margin-top: 1px;
+                    margin-bottom: 1px;
+                }
+                    .form input {
+                        height: 45px;
+                        border: none;
+                        background-color: #ECF0F1;
+                        outline: none;
+                        width: 100%;
+                        padding-left: 5px;
+                    }
+                    .icon-modify {
+                        color: #7F8C8D;
+                        padding: 0px 10px;
+                    }
+
+    /* SEGUNDA TELA */
+    .second-content {
+        position: absolute;
+    }
+        /* ALTERAÇÃO DE DIREAÇÃO DAS TELAS */
+        .second-content .first-column {
+            order: 2;
+            z-index: -1;
+        }
+        .second-content .second-column {
+            order: 1;
+            z-index: -1;
+        }
+        /* LINK DE "ESQUECI MINHA SENHA" */
+        .forgot-pass {
+            color: #000;
+            margin: auto;
+            margin-top: 15px;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        .forgot-pass::first-letter {
+            text-transform: capitalize;
+        }
+        
+/* CONFIGURAÇÃO DA ALTERAÇÃO DE TELA - SIGN IN */
+.sign-in-js .first-content .first-column {
+    z-index: -1;
+}
+.sign-in-js .second-content .second-column {
+    z-index: 10;
+}
+.sign-in-js .second-content .first-column {
+    z-index: 12;
+}
+.sign-in-js .content::before {
+    left: 60%;
+    border-radius: 0px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: slidein 2s;
+    z-index: 11;
+}
+/* DESLOCAMENTO DO CONTEÚDO PARA TRÁS DO "BEFORE" */
+.sign-in-js .first-content .second-column {
+    z-index: -1;
+    position: relative;
+    animation: movein 2s;
+}
+
+/* CONFIGURAÇÃO DA ALTERAÇÃO DE TELA - SING UP */
+.sign-up-js .first-content .second-column {
+    z-index: 10;
+}
+.sign-up-js .first-content .first-column {
+    z-index: 12;
+}
+.sign-up-js .second-content .first-column {
+    z-index: -1;
+}
+.sign-up-js .content::before {
+    left: 0;
+    border-radius: 0px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    animation: slideout 2s;
+    z-index: 11;
+}
+/* DESLOCAMENTO DO CONTEÚDO PARA TRÁS DO "BEFORE" */
+.sign-up-js .second-content .second-column {
+    z-index: -1;
+    position: relative;
+    animation: moveout 2s;
+}
+
+/*          ANIMAÇÕES DE ALTERAÇÃO DE TELA         */
+/* DESLOCAMENTO DOS CONTEÚDOS PARA TRÁS DO BEFORE */
+@keyframes movein {
+
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    50% {
+        left: -80px;
+        opacity: .1;
+        z-index: 12;
+    }
+
+    to {
+        opacity: 0;
+        left: -100px;
+        z-index: -1;
+    }
+
+}
+
+@keyframes moveout {
+
+    from {
+        left: 0;
+        opacity: 1;
+        z-index: 12;
+    }
+
+    50% {
+        left: 80px;
+        opacity: .1;
+        z-index: 12;
+    }
+
+    to {
+        opacity: 0;
+        left: 100px;
+        z-index: -1;
+    }
+
+}
+
+/* DESCOLAMENTO DOS BEFORE */
+@keyframes slidein {
+
+    from {
+        left: 0;
+        width: 40%;
+    }
+
+    50% {
+        left: 30%;
+        width: 50%;
+    }
+    
+    to {
+        left: 60%;
+        width: 40%;
+    }
+
+}
+
+@keyframes slideout {
+
+    from {
+        left: 60%;
+        width: 40%;
+    }
+
+    50% {
+        left: 30%;
+        width: 50%;
+    }
+
+    to {
+        left: 0;
+        width: 40%;
+    }
+
+}
